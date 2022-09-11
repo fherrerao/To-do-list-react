@@ -3,7 +3,9 @@ import TodoItem from "./TodoItem";
 const TodoList = (props) => {
   return(
     <div>
-      <TodoItem todos={props.todos} />
+      <TodoItem 
+        todos={props}
+      />
     </div>
   );
 }
