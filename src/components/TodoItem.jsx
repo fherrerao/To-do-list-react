@@ -1,8 +1,15 @@
-const TodoItem = (props) => {
+const TodoItem = (props) => {    
   return (
     <div>
-      {props.todos.map(item => (
-        <li key={item.id}>{item.title}</li>
+      {props.todos.todos.map(item => (
+        <li key={item.id}> 
+          <input 
+            type="checkbox" 
+            checked={item.completed}
+            onChange={() => props.todos.handleChangeProps(item.id)}
+          /> 
+          {item.title}
+        </li>
       ))}
     </div>
   );
