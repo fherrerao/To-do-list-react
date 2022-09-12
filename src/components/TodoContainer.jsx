@@ -1,33 +1,65 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import TodoList from "./TodoList";
+import InputTodo from "./InputTodo";
 
 const TodoContainer = () => {
-  const todos = [
-    {
-      id: 1,
-      title: "Setup development environment",
-      completed: true
-    },
-    {
-      id: 2,
-      title: "Develop website and add content",
-      completed: false
-    },
-    {
-      id: 3,
-      title: "Deploy to live server",
-      completed: false
-    }
-  ];
-
   const [data, setData] = useState([]);
-  useEffect(() => {  
+
+  useEffect(() => {
+    const todos = [
+      {
+        id: uuidv4(),
+        title: "Setup development environment",
+        completed: true
+      },
+      {
+        id: uuidv4(),
+        title: "Develop website and add content",
+        completed: false
+      },
+      {
+        id: uuidv4(),
+        title: "Deploy to live server",
+        completed: false
+      }
+    ];
     setData(todos);
   },[]);
+
+  const handleChange = (id) => {
+    data.forEach(item => {
+      if(item.id === id){
+        item.completed = !item.completed;
+        setData([...data]);
+      }
+    });
+  }
+
+  const deleteItem = (id) => {
+    setData([...data.filter(item => item.id !== id)]);
+  }
+
+  const addTodoItem = (title) => {
+    const newTodo = {
+      id: uuidv4(),
+      title: title,
+      completed: false,
+    }
+    setData([...data, newTodo])
+    console.log(data);
+  }
   
   return(
     <div>
-      <TodoList todos={data} />
+      <InputTodo
+        addTodoItemProps = {addTodoItem}
+      />
+      <TodoList 
+        todos={data} 
+        handleChangeProps = {handleChange}
+        deleteItemProp = {deleteItem}
+      />
     </div>
   );
 }
