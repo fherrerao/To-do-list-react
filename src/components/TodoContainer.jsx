@@ -33,10 +33,18 @@ const TodoContainer = () => {
       }
     });
   }
+
+  const deleteItem = (id) => {
+    setData([...data.filter(item => item.id !== id)]);
+  }
   
   return(
     <div>
-      <TodoList todos={data} handleChangeProps = {handleChange}/>
+      <TodoList 
+        todos={data} 
+        handleChangeProps = {handleChange}
+        deleteItemProp = {deleteItem}
+      />
     </div>
   );
 }
