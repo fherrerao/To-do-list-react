@@ -6,6 +6,7 @@ const TodoList = (props) => {
       <TodoItem 
         todos={props}
         deleteItemProp={props.deleteItemProp}
+        updateItemProp={props.updateItemProp}
       />
     </div>
   );
