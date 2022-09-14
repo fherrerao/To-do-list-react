@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa"
 
 const InputTodo = (props) => {
   const [title, setTitle] = useState("");
@@ -23,7 +24,9 @@ const InputTodo = (props) => {
         value={title}
         onChange={onChange}
       />
-      <button className="input-submit">Submit</button>
+      <button className="input-submit">
+        <FaPlus style={{color:"darkcyan", size:"20px", className:"submit-icon"}}/>
+      </button>
     </form>
   );
 }
