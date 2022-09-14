@@ -24,19 +24,24 @@ const TodoContainer = () => {
         completed: false
       }
     ];
-    setData(todos);
+    if (localStorage.getItem("TodoData") == null){
+      localStorage.setItem("TodoData", JSON.stringify(todos));
+    }    
+    setData(JSON.parse(localStorage.getItem("TodoData")));
   },[]);
 
   const handleChange = (id) => {
     data.forEach(item => {
       if(item.id === id){
         item.completed = !item.completed;
+        localStorage.setItem("TodoData", JSON.stringify(data));
         setData([...data]);
       }
     });
   }
 
   const deleteItem = (id) => {
+    localStorage.setItem("TodoData", JSON.stringify([...data.filter(item => item.id !== id)]));
     setData([...data.filter(item => item.id !== id)]);
   }
 
@@ -46,14 +51,16 @@ const TodoContainer = () => {
       title: title,
       completed: false,
     }
+    localStorage.setItem("TodoData", JSON.stringify([...data, newTodo]))
     setData([...data, newTodo])
   }
 
   const updateTodoItem = (title, id) => {
     data.forEach(item => {
       if(item.id === id){
-        item.title = title;
-        setData([...data]);
+        item.title = title;        
+        localStorage.setItem("TodoData", JSON.stringify([...data]))
+        setData([...data])
       }
     });    
   }
