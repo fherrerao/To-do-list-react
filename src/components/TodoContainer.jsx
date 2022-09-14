@@ -47,7 +47,15 @@ const TodoContainer = () => {
       completed: false,
     }
     setData([...data, newTodo])
-    console.log(data);
+  }
+
+  const updateTodoItem = (title, id) => {
+    data.forEach(item => {
+      if(item.id === id){
+        item.title = title;
+        setData([...data]);
+      }
+    });    
   }
   
   return(
@@ -60,6 +68,7 @@ const TodoContainer = () => {
           todos={data} 
           handleChangeProps = {handleChange}
           deleteItemProp = {deleteItem}
+          updateItemProp = {updateTodoItem}
         />
       </div>
     </div>
