@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Demo link](https://fherrerao.github.io/Covid-Metrics/).
+[Demo link](https://fherrerao.github.io/To-do-list-react/).
 
 ## Getting Started
 
