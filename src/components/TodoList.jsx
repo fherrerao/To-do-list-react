@@ -1,14 +1,18 @@
-import TodoItem from "./TodoItem";
+import TodoItem from './TodoItem';
 
 const TodoList = (props) => {
-  return(
+  // eslint-disable-next-line react/prop-types
+  const { deleteItemProp, updateItemProp } = props;
+
+  return (
     <div>
-      <TodoItem 
+      <TodoItem
         todos={props}
-        deleteItemProp={props.deleteItemProp}
+        deleteItemProp={deleteItemProp}
+        updateItemProp={updateItemProp}
       />
     </div>
   );
-}
+};
 
 export default TodoList;
