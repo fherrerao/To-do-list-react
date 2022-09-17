@@ -44,12 +44,13 @@ const TodoItem = (props) => {
                 props.deleteItemProp(item.id);
               }}
             >
-              <FaTrashAlt style={{color: "orangered", fontSize: "16px"}}/>
+              <FaTrashAlt style={{color: "darkcyan", fontSize: "16px"}}/>
             </button>
-            <span style={item.completed ? completedStyle : null}>
+            <span className="text-light link-hover" style={item.completed ? completedStyle : null}>
               {item.title}
             </span>
           </div>
+
           <input
             type="text" 
             className={styles.textInput} 
