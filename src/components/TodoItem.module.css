@@ -5,6 +5,10 @@
   border-bottom: 1px solid #eaeaea;
 }
 
+.item:hover {
+  transform: translate(5px);
+}
+
 .checkbox {
   margin-right: 15px;
 }
