@@ -4,7 +4,7 @@
 
 > A web app where users can add a new to-do, mark it as done, or update it
 
-![readmePic](https://user-images.githubusercontent.com/91301423/157890781-cde43192-ebad-47bc-b7de-4f781ea0298f.png)
+![Screenshot from 2022-09-17 17-40-43](https://user-images.githubusercontent.com/91301423/190878615-e65e19d6-979c-4b90-b2eb-c9595ee7cf7a.png)
 
 ## Built With
 
