@@ -33,6 +33,7 @@ body {
   border-radius: calc(0.5 * 100px);
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
   justify-content: space-evenly;
+  background-color: rgb(57, 58, 58);
 }
 
 .input-text {
@@ -62,4 +63,24 @@ body {
   height: 45px;
   outline: none;
   border: none;
+}
+
+.active {
+  color: orangered;
+  text-decoration: underline;
+}
+
+@media (min-width: 886px) {
+  .btn {
+    display: none;
+  }
+
+  nav {
+    background-color: rgb(57, 58, 58)
+  }
+
+  nav ul {
+    display: flex !important;
+    column-gap: 10px;
+  }
 }
