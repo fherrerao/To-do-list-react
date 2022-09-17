@@ -25,7 +25,7 @@ const InputTodo = (props) => {
         onChange={onChange}
       />
       <button className="input-submit">
-        <FaPlus style={{color:"darkcyan", size:"20px", className:"submit-icon"}}/>
+        <FaPlus style={{color:"darkcyan", size:"20px", className:"submit-icon", background: "transparent"}}/>
       </button>
     </form>
   );
