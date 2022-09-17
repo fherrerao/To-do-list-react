@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Router basename="/">
-        <Navbar/>
+        <Navbar />
         <Header />
         <Routes>
           <Route path="/" element={<TodoContainer />} />
