@@ -32,7 +32,7 @@ const Navbar = () => {
     {
       id: 2,
       path: "/about",
-      text: "about"
+      text: "About"
     }
   ];
 
@@ -41,7 +41,7 @@ const Navbar = () => {
       <ul style={styleHamburger()} >
         {links.map(link => (
           <li key={link.id} className="nav p-2">
-            <NavLink to={link.path} > 
+            <NavLink to={link.path} className="text-decoration-none"> 
               {link.text}
             </NavLink>
           </li>
