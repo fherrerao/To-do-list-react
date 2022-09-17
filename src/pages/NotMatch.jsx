@@ -1,9 +1,7 @@
-const NotMatch = () => {
-  return (
-    <div>
-      <h1>No math for this page</h1>
-    </div>
-  );
-}
+const NotMatch = () => (
+  <div>
+    <h1>No math for this page</h1>
+  </div>
+);
 
 export default NotMatch;

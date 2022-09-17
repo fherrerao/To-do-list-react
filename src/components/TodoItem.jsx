@@ -1,32 +1,34 @@
-import { useState } from "react";
-import styles from "./TodoItem.module.css";
-import { FaTrashAlt } from "react-icons/fa";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import { useState } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
+import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
-
   const [edit, setEdit] = useState(false);
 
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
 
   const completedStyle = {
-    fontStyle: "italic",
-    color: "#595959",
+    fontStyle: 'italic',
+    color: '#595959',
     opacity: 0.4,
-    textDecoration: "line-through",
+    textDecoration: 'line-through',
   };
 
   const handleEditing = () => {
     setEdit(true);
   };
 
-  edit ? viewMode.display = "none" : editMode.display = "none"
+  // eslint-disable-next-line no-unused-expressions
+  edit ? viewMode.display = 'none' : editMode.display = 'none';
 
   const handleUpdateDone = (e) => {
-    if(e.key === "Enter"){
+    if (e.key === 'Enter') {
       setEdit(false);
     }
-  }
+  };
 
   return (
     <div>
@@ -40,11 +42,12 @@ const TodoItem = (props) => {
               onChange={() => props.todos.handleChangeProps(item.id)}
             />
             <button
+              type="button"
               onClick={() => {
                 props.deleteItemProp(item.id);
               }}
             >
-              <FaTrashAlt style={{color: "darkcyan", fontSize: "16px"}}/>
+              <FaTrashAlt style={{ color: 'darkcyan', fontSize: '16px' }} />
             </button>
             <span className="text-light link-hover" style={item.completed ? completedStyle : null}>
               {item.title}
@@ -52,12 +55,12 @@ const TodoItem = (props) => {
           </div>
 
           <input
-            type="text" 
-            className={styles.textInput} 
-            style={editMode} 
+            type="text"
+            className={styles.textInput}
+            style={editMode}
             value={item.title}
-            onChange={e => {
-              props.updateItemProp(e.target.value, item.id)
+            onChange={(e) => {
+              props.updateItemProp(e.target.value, item.id);
             }}
             onKeyDown={handleUpdateDone}
           />
